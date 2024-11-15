@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambikesh Cafe & Book Nook</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Ambikesh Cafe & Book Nook</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#books">Books</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <input type="text" id="searchBar" placeholder="Search books or coffee..." oninput="filterItems()">
+        </div>
+    </header>
+
+    <section id="home" class="home-section">
+        <div class="hero">
+            <h2>Your Perfect Spot for Coffee and Books</h2>
+            <p>Enjoy our exquisite selection of coffees and a cozy nook to read your favorite books.</p>
+        </div>
+    </section>
+
+    <div class="content">
+        <section id="menu" class="section">
+            <h2>Our Menu</h2>
+            <div class="grid-container" id="menuItems">
+                <div class="grid-item" data-name="Espresso" data-price="3" onclick="addToCart('Espresso', 3)">
+                    <div class="card">
+                        <img src="Espresso.png" alt="Espresso">
+                        <p>Espresso - $3</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Cappuccino" data-price="4" onclick="addToCart('Cappuccino', 4)">
+                    <div class="card">
+                        <img src="Cappuccino.png" alt="Cappuccino">
+                        <p>Cappuccino - $4</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Latte" data-price="4.5" onclick="addToCart('Latte', 4.5)">
+                    <div class="card">
+                        <img src="Latte.png" alt="Latte">
+                        <p>Latte - $4.5</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Americano" data-price="3.5" onclick="addToCart('Americano', 3.5)">
+                    <div class="card">
+                        <img src="Americano.png" alt="Americano">
+                        <p>Americano - $3.5</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Mocha" data-price="5" onclick="addToCart('Mocha', 5)">
+                    <div class="card">
+                        <img src="Mocha.png" alt="Mocha">
+                        <p>Mocha - $5</p>
+                    </div>
+                </div>
+        
+                
+                <div class="grid-item" data-name="Margherita Pizza" data-price="10" onclick="addToCart('Margherita Pizza', 10)">
+                    <div class="card">
+                        <img src="Pizza1.png" alt="Margherita Pizza">
+                        <p>Margherita Pizza - $10</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Pepperoni Pizza" data-price="12" onclick="addToCart('Pepperoni Pizza', 12)">
+                    <div class="card">
+                        <img src="Pepperoni-Pizza-PNG-Image.png" alt="Pepperoni Pizza">
+                        <p>Pepperoni Pizza - $12</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Vegetarian Pizza" data-price="11" onclick="addToCart('Vegetarian Pizza', 11)">
+                    <div class="card">
+                        <img src="Pizza3.png" alt="Vegetarian Pizza">
+                        <p>Vegetarian Pizza - $11</p>
+                    </div>
+                </div>
+        
+                <div class="grid-item" data-name="BBQ Chicken Pizza" data-price="13" onclick="addToCart('BBQ Chicken Pizza', 13)">
+                    <div class="card">
+                        <img src="Pizza4.png" alt="BBQ Chicken Pizza">
+                        <p>BBQ Chicken Pizza - $13</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Hawaiian Pizza" data-price="12.5" onclick="addToCart('Hawaiian Pizza', 12.5)">
+                    <div class="card">
+                        <img src="pizza5.png" alt="Hawaiian Pizza">
+                        <p>Hawaiian Pizza - $12.5</p>
+                    </div>
+                </div>
+        
+                <div class="grid-item" data-name="Veg Sandwich" data-price="6" onclick="addToCart('Veg Sandwich', 6)">
+                    <div class="card">
+                        <img src="images/veg_sandwich.jpg" alt="Veg Sandwich">
+                        <p>Veg Sandwich - $6</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Grilled Cheese Sandwich" data-price="7" onclick="addToCart('Grilled Cheese Sandwich', 7)">
+                    <div class="card">
+                        <img src="images/grilled_cheese_sandwich.jpg" alt="Grilled Cheese Sandwich">
+                        <p>Grilled Cheese Sandwich - $7</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Chicken Sandwich" data-price="8" onclick="addToCart('Chicken Sandwich', 8)">
+                    <div class="card">
+                        <img src="images/chicken_sandwich.jpg" alt="Chicken Sandwich">
+                        <p>Chicken Sandwich - $8</p>
+                    </div>
+                </div>
+        
+                <div class="grid-item" data-name="Turkey Sandwich" data-price="8.5" onclick="addToCart('Turkey Sandwich', 8.5)">
+                    <div class="card">
+                        <img src="images/turkey_sandwich.jpg" alt="Turkey Sandwich">
+                        <p>Turkey Sandwich - $8.5</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Chicken Caesar Sandwich" data-price="9" onclick="addToCart('Chicken Caesar Sandwich', 9)">
+                    <div class="card">
+                        <img src="images/chicken_caesar_sandwich.jpg" alt="Chicken Caesar Sandwich">
+                        <p>Chicken Caesar Sandwich - $9</p>
+                    </div>
+                </div>
+        
+                <div class="grid-item" data-name="Veg Burger" data-price="6.5" onclick="addToCart('Veg Burger', 6.5)">
+                    <div class="card">
+                        <img src="images/veg_burger.jpg" alt="Veg Burger">
+                        <p>Veg Burger - $6.5</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Cheese Burger" data-price="7.5" onclick="addToCart('Cheese Burger', 7.5)">
+                    <div class="card">
+                        <img src="images/cheese_burger.jpg" alt="Cheese Burger">
+                        <p>Cheese Burger - $7.5</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Chicken Burger" data-price="9" onclick="addToCart('Chicken Burger', 9)">
+                    <div class="card">
+                        <img src="images/chicken_burger.jpg" alt="Chicken Burger">
+                        <p>Chicken Burger - $9</p>
+                    </div>
+                </div>
+        
+                
+                <div class="grid-item" data-name="BBQ Bacon Burger" data-price="10" onclick="addToCart('BBQ Bacon Burger', 10)">
+                    <div class="card">
+                        <img src="images/bbq_bacon_burger.jpg" alt="BBQ Bacon Burger">
+                        <p>BBQ Bacon Burger - $10</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Double Cheeseburger" data-price="12" onclick="addToCart('Double Cheeseburger', 12)">
+                    <div class="card">
+                        <img src="images/double_cheeseburger.jpg" alt="Double Cheeseburger">
+                        <p>Double Cheeseburger - $12</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="books" class="section">
+            <h2>Books Collection</h2>
+            <div class="grid-container" id="bookItems">
+                <div class="grid-item" data-name="Premchand Ki Kahaniyan" data-price="10" onclick="addToCart('Premchand Ki Kahaniyan', 10)">
+                    <div class="card">
+                        <img src="images/premchand_ki_kahaniyan.jpg" alt="Premchand Ki Kahaniyan">
+                        <p>Premchand Ki Kahaniyan - Munshi Premchand</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Godan" data-price="12" onclick="addToCart('Godan', 12)">
+                    <div class="card">
+                        <img src="images/godan.jpg" alt="Godan">
+                        <p>Godan - Munshi Premchand</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Nirmala" data-price="14" onclick="addToCart('Nirmala', 14)">
+                    <div class="card">
+                        <img src="images/nirmala.jpg" alt="Nirmala">
+                        <p>Nirmala - Munshi Premchand</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Gaban" data-price="13" onclick="addToCart('Gaban', 13)">
+                    <div class="card">
+                        <img src="images/gaban.jpg" alt="Gaban">
+                        <p>Gaban - Munshi Premchand</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Raat Pashmine Ki" data-price="11" onclick="addToCart('Raat Pashmine Ki', 11)">
+                    <div class="card">
+                        <img src="images/raat_pashmine_ki.jpg" alt="Raat Pashmine Ki">
+                        <p>Raat Pashmine Ki - Bhagwati Prasad Vyas</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Madhushala" data-price="16" onclick="addToCart('Madhushala', 16)">
+                    <div class="card">
+                        <img src="images/madhushala.jpg" alt="Madhushala">
+                        <p>Madhushala - Harivansh Rai Bachchan</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Bharatiya Sanskriti" data-price="18" onclick="addToCart('Bharatiya Sanskriti', 18)">
+                    <div class="card">
+                        <img src="images/bharatiya_sanskriti.jpg" alt="Bharatiya Sanskriti">
+                        <p>Bharatiya Sanskriti - Deen Dayal Upadhyaya</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Rashmirathi" data-price="17" onclick="addToCart('Rashmirathi', 17)">
+                    <div class="card">
+                        <img src="images/rashmirathi.jpg" alt="Rashmirathi">
+                        <p>Rashmirathi - Ramdhari Singh Dinkar</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Madhurima" data-price="12" onclick="addToCart('Madhurima', 12)">
+                    <div class="card">
+                        <img src="images/madhurima.jpg" alt="Madhurima">
+                        <p>Madhurima - Shivani</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Chandrakanta" data-price="15" onclick="addToCart('Chandrakanta', 15)">
+                    <div class="card">
+                        <img src="images/chandrakanta.jpg" alt="Chandrakanta">
+                        <p>Chandrakanta - Devaki Nandan Khatri</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Shahabuddin" data-price="14" onclick="addToCart('Shahabuddin', 14)">
+                    <div class="card">
+                        <img src="images/shahabuddin.jpg" alt="Shahabuddin">
+                        <p>Shahabuddin - Keki N. Daruwalla</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Gunahon Ka Devta" data-price="13" onclick="addToCart('Gunahon Ka Devta', 13)">
+                    <div class="card">
+                        <img src="images/gunahon_ka_devta.jpg" alt="Gunahon Ka Devta">
+                        <p>Gunahon Ka Devta - Dharamvir Bharati</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Nayi Kahaniyan" data-price="10" onclick="addToCart('Nayi Kahaniyan', 10)">
+                    <div class="card">
+                        <img src="images/nayi_kahaniyan.jpg" alt="Nayi Kahaniyan">
+                        <p>Nayi Kahaniyan - Kamleshwar</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Chhote Chhote Pankh" data-price="12" onclick="addToCart('Chhote Chhote Pankh', 12)">
+                    <div class="card">
+                        <img src="images/chhote_chhote_pankh.jpg" alt="Chhote Chhote Pankh">
+                        <p>Chhote Chhote Pankh - Uday Prakash</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Brahma" data-price="11" onclick="addToCart('Brahma', 11)">
+                    <div class="card">
+                        <img src="images/brahma.jpg" alt="Brahma">
+                        <p>Brahma - Mahadevi Varma</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Bhagwan Ke Haath Mein" data-price="18" onclick="addToCart('Bhagwan Ke Haath Mein', 18)">
+                    <div class="card">
+                        <img src="images/bhagwan_ke_haath_mein.jpg" alt="Bhagwan Ke Haath Mein">
+                        <p>Bhagwan Ke Haath Mein - Sumitranandan Pant</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Mitti Ki Khushboo" data-price="14" onclick="addToCart('Mitti Ki Khushboo', 14)">
+                    <div class="card">
+                        <img src="images/mitti_ki_khushboo.jpg" alt="Mitti Ki Khushboo">
+                        <p>Mitti Ki Khushboo - Jaya Bhattacharji Rose</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Jeevan Ki Tazgi" data-price="13" onclick="addToCart('Jeevan Ki Tazgi', 13)">
+                    <div class="card">
+                        <img src="images/jeevan_ki_tazgi.jpg" alt="Jeevan Ki Tazgi">
+                        <p>Jeevan Ki Tazgi - Shailendra</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Satyagrah Ke Pathik" data-price="16" onclick="addToCart('Satyagrah Ke Pathik', 16)">
+                    <div class="card">
+                        <img src="images/satyagrah_ke_pathik.jpg" alt="Satyagrah Ke Pathik">
+                        <p>Satyagrah Ke Pathik - Mahatma Gandhi</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Pehchaan" data-price="15" onclick="addToCart('Pehchaan', 15)">
+                    <div class="card">
+                        <img src="images/pehchaan.jpg" alt="Pehchaan">
+                        <p>Pehchaan - Surendra Mohan Pathak</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Nasha" data-price="14" onclick="addToCart('Nasha', 14)">
+                    <div class="card">
+                        <img src="images/nasha.jpg" alt="Nasha">
+                        <p>Nasha - Shivani</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Aapki Katha" data-price="13" onclick="addToCart('Aapki Katha', 13)">
+                    <div class="card">
+                        <img src="images/aapki_katha.jpg" alt="Aapki Katha">
+                        <p>Aapki Katha - Bhagwati Charan Verma</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Katha Sagar" data-price="12" onclick="addToCart('Katha Sagar', 12)">
+                    <div class="card">
+                        <img src="images/katha_sagar.jpg" alt="Katha Sagar">
+                        <p>Katha Sagar - Harishankar Parsai</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Maut Ki Akhri Kitaab" data-price="10" onclick="addToCart('Maut Ki Akhri Kitaab', 10)">
+                    <div class="card">
+                        <img src="images/maut_ki_akhri_kitaab.jpg" alt="Maut Ki Akhri Kitaab">
+                        <p>Maut Ki Akhri Kitaab - Asghar Wajahat</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Kahaniyon Ki Dunia" data-price="14" onclick="addToCart('Kahaniyon Ki Dunia', 14)">
+                    <div class="card">
+                        <img src="images/kahaniyon_ki_dunia.jpg" alt="Kahaniyon Ki Dunia">
+                        <p>Kahaniyon Ki Dunia - Ismat Chughtai</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Yatharth" data-price="15" onclick="addToCart('Yatharth', 15)">
+                    <div class="card">
+                        <img src="images/yatharth.jpg" alt="Yatharth">
+                        <p>Yatharth - Agyeya</p>
+                    </div>
+                </div>
+                <div class="grid-item" data-name="Nayee Kahaniyan" data-price="13" onclick="addToCart('Nayee Kahaniyan', 13)">
+                    <div class="card">
+                        <img src="images/nayee_kahaniyan.jpg" alt="Nayee Kahaniyan">
+                        <p>Nayee Kahaniyan - Kamleshwar</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+    </div>
+
+    <div class="cart-button" onclick="toggleCart()">
+        <button>Cart</button>
+    </div>
+
+    <div class="cart-section" id="cartSection">
+        <h2>Your Cart</h2>
+        <div id="cartItems">
+            
+        </div>
+        <div id="totalCost">
+            <p>Total: $0</p>
+        </div>
+        <button class="btn" onclick="checkout()">Checkout</button>
+    </div>
+
+    <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <p>Email: abhay2004raj15@gmail.com</p>
+        <p>Phone: +91 91294 51978</p>
+        <p>Address: Allahapur, Prayagraj, Uttar Pradesh</p>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Ambikesh Cafe & Book Nook. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
