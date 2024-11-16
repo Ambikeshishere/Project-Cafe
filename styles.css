@@ -6,11 +6,11 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f9f9f9;  /* Soft background color */
+    background-color: #f9f9f9;
 }
 
 header {
-    background-color: #4A6572;  /* Muted teal-green for header */
+    background-color: #4A6572;
     color: white;
     padding: 15px 0;
     display: flex;
@@ -36,7 +36,7 @@ header .container {
 header .logo {
     font-size: 2rem;
     font-weight: 600;
-    color: #ffffff;  /* White text for contrast */
+    color: #ffffff;
 }
 
 header nav {
@@ -64,24 +64,24 @@ header input {
     width: 200px;
     border: none;
     margin-left: 20px;
-    background-color: #f0f0f0;  /* Light background for input */
+    background-color: #f0f0f0;
 }
 
 .hero {
-    background-color: #ffffff;  /* Light, neutral background for hero section */
+    background-color: #ffffff;
     padding: 60px 0;
     text-align: center;
-    margin-top: 80px; /* Adjusted for fixed header */
+    margin-top: 80px;
 }
 
 .hero h2 {
     font-size: 2.5rem;
-    color: #4A6572;  /* Muted teal color */
+    color: #4A6572;
 }
 
 .hero p {
     font-size: 1.2rem;
-    color: #777777;  /* Soft gray text */
+    color: #777777;
 }
 
 .section {
@@ -91,7 +91,7 @@ header input {
 
 h2 {
     font-size: 2rem;
-    color: #4A6572;  /* Muted teal color */
+    color: #4A6572;
     margin-bottom: 30px;
 }
 
@@ -109,7 +109,7 @@ h2 {
 }
 
 .card {
-    background-color: #ffffff;  /* White background for the card */
+    background-color: #ffffff;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -138,7 +138,7 @@ h2 {
 }
 
 .card {
-    border: 2px solid #e0e0e0;  /* Light gray border */
+    border: 2px solid #e0e0e0;
     border-radius: 8px;
     padding: 10px;
     transition: box-shadow 0.3s ease, background-color 0.3s ease;
@@ -149,24 +149,30 @@ h2 {
 }
 
 .card.added {
-    background-color: #f4f4f4;  /* Soft gray background for added cards */
-    border-color: #81C784;  /* Light green color for added state */
+    background-color: #f4f4f4;
+    border-color: #81C784;
 }
 
 .card.added:hover {
-    box-shadow: 0 4px 15px rgba(0, 128, 0, 0.2);  /* Light green hover effect */
+    box-shadow: 0 4px 15px rgba(0, 128, 0, 0.2);
 }
 
 .cart-button button {
-    padding: 15px;
-    background-color: #4A6572;  /* Muted teal button */
+    padding: 2px;
+    background-color: #4A6572;
     color: white;
-    border-radius: 50%;
+    border-radius: 10;
     border: none;
-    font-size: 1.5rem;
     cursor: pointer;
 }
 
+.cart-button button .responsive-image {
+    
+        width: 25%;
+        height: 15%;
+    
+    
+}
 .cart-section {
     position: fixed;
     top: 0;
@@ -190,7 +196,7 @@ h2 {
 }
 
 .cart-item button {
-    background-color: #F44336;  /* Red background for remove button */
+    background-color: #F44336;
     color: white;
     border: none;
     padding: 5px 10px;
@@ -199,7 +205,7 @@ h2 {
 }
 
 .cart-item button:hover {
-    background-color: #D32F2F;  /* Darker red on hover */
+    background-color: #D32F2F;
 }
 
 .cart-section.visible {
@@ -214,12 +220,12 @@ h2 {
 #totalCost {
     margin-top: 10px;
     font-weight: bold;
-    color: #4A6572;  /* Muted teal for total cost */
+    color: #4A6572;
 }
 
 button {
     padding: 10px 20px;
-    background-color: #4A6572;  /* Muted teal button */
+    background-color: #4A6572;
     color: white;
     border: none;
     border-radius: 5px;
@@ -227,11 +233,11 @@ button {
 }
 
 button:hover {
-    background-color: #3C5C61;  /* Slightly darker teal on hover */
+    background-color: #3C5C61;
 }
 
 footer {
-    background-color: #4A6572;  /* Muted teal footer */
+    background-color: #4A6572;
     color: white;
     padding: 15px 0;
     text-align: center;
