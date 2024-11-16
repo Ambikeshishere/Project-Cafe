@@ -11,7 +11,9 @@ function addToCart(itemName, itemPrice) {
         card.classList.add('added');
     }
 
+    showCartLoadingGif(true); // Show loading GIF while updating the cart
     updateCartDisplay();
+    showCartLoadingGif(false); // Hide loading GIF after updating the cart
 }
 
 function updateCart() {
@@ -85,4 +87,13 @@ function filterItems() {
         const itemName = item.getAttribute('data-name').toLowerCase();
         item.style.display = itemName.includes(searchQuery) ? 'block' : 'none';
     });
+}
+
+function showCartLoadingGif(show) {
+    const gifContainer = document.getElementById('cartLoadingGif');
+    if (show) {
+        gifContainer.style.display = 'block';
+    } else {
+        gifContainer.style.display = 'none';
+    }
 }
