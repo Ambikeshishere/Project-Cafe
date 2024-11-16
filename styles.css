@@ -6,19 +6,22 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #E1E8EB; /* Soft gray background */
-    color: #3D3D3D; /* Dark gray text */
+    background-color: #f9f9f9;  /* Soft background color */
 }
 
 header {
-    background-color: #A8D5BA; /* Soft green header */
-    color: #3D3D3D;
+    background-color: #4A6572;  /* Muted teal-green for header */
+    color: white;
     padding: 15px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 }
 
 header .container {
@@ -28,19 +31,16 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
 }
 
 header .logo {
     font-size: 2rem;
     font-weight: 600;
-    color: #3D3D3D; /* Dark gray for logo text */
+    color: #ffffff;  /* White text for contrast */
 }
 
 header nav {
     display: flex;
-    flex: 2;
-    justify-content: flex-end;
 }
 
 header nav ul {
@@ -53,7 +53,7 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: #3D3D3D; /* Dark gray links */
+    color: #ffffff;
     text-decoration: none;
     font-weight: 500;
 }
@@ -62,24 +62,26 @@ header input {
     padding: 8px;
     border-radius: 5px;
     width: 200px;
-    border: 2px solid #B0B0B0; /* Soft gray border for input */
+    border: none;
     margin-left: 20px;
+    background-color: #f0f0f0;  /* Light background for input */
 }
 
 .hero {
-    background-color: #FFFFFF; /* White background for hero section */
+    background-color: #ffffff;  /* Light, neutral background for hero section */
     padding: 60px 0;
     text-align: center;
+    margin-top: 80px; /* Adjusted for fixed header */
 }
 
 .hero h2 {
     font-size: 2.5rem;
-    color: #3D3D3D;
+    color: #4A6572;  /* Muted teal color */
 }
 
 .hero p {
     font-size: 1.2rem;
-    color: #666;
+    color: #777777;  /* Soft gray text */
 }
 
 .section {
@@ -89,7 +91,7 @@ header input {
 
 h2 {
     font-size: 2rem;
-    color: #3D3D3D;
+    color: #4A6572;  /* Muted teal color */
     margin-bottom: 30px;
 }
 
@@ -106,28 +108,23 @@ h2 {
     align-items: center;
 }
 
-/* Ensure all cards have the same size */
 .card {
-    background-color: #FFFFFF; /* White background for cards */
+    background-color: #ffffff;  /* White background for the card */
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
     text-align: center;
-    width: 180px; /* Fixed width for uniform size */
-    height: 250px; /* Fixed height for uniform size */
+    width: 180px;
+    height: 280px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Ensures spacing between content */
-    border: 2px solid #B0B0B0; /* Soft border for cards */
-    overflow: hidden; /* Prevents content from overflowing */
+    justify-content: space-between;
 }
 
 .card img {
     max-width: 100%;
-    max-height: 120px; /* Fixed height for images to ensure uniformity */
-    object-fit: cover; /* Ensures images cover the available space without stretching */
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
 .card:hover {
@@ -141,28 +138,28 @@ h2 {
 }
 
 .card {
-    border: 2px solid #B0B0B0;
+    border: 2px solid #e0e0e0;  /* Light gray border */
     border-radius: 8px;
     padding: 10px;
     transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .card:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .card.added {
-    background-color: #E8F5E9; /* Light green background for added cards */
-    border-color: #81C784; /* Soft green border for added items */
+    background-color: #f4f4f4;  /* Soft gray background for added cards */
+    border-color: #81C784;  /* Light green color for added state */
 }
 
 .card.added:hover {
-    box-shadow: 0 4px 15px rgba(0, 128, 0, 0.4);
+    box-shadow: 0 4px 15px rgba(0, 128, 0, 0.2);  /* Light green hover effect */
 }
 
 .cart-button button {
     padding: 15px;
-    background-color: #6B8E23; /* Muted green for cart button */
+    background-color: #4A6572;  /* Muted teal button */
     color: white;
     border-radius: 50%;
     border: none;
@@ -170,32 +167,30 @@ h2 {
     cursor: pointer;
 }
 
-/* Ensure the cart section becomes scrollable when full */
 .cart-section {
     position: fixed;
     top: 0;
     right: 0;
     width: 300px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     padding: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     display: none;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
     z-index: 1000;
-    height: 100vh; /* Full viewport height for the cart */
-    overflow-y: auto; /* Allow vertical scrolling */
+    height: 100%;
+    overflow-y: auto;
 }
 
 .cart-item {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
-    padding: 5px;
 }
 
 .cart-item button {
-    background-color: #F44336; /* Red for remove button */
+    background-color: #F44336;  /* Red background for remove button */
     color: white;
     border: none;
     padding: 5px 10px;
@@ -204,32 +199,27 @@ h2 {
 }
 
 .cart-item button:hover {
-    background-color: #D32F2F;
+    background-color: #D32F2F;  /* Darker red on hover */
 }
 
-/* When cart is open, show full height and allow scrolling */
 .cart-section.visible {
     display: block;
     opacity: 1;
-    height: 100vh; /* Ensures the cart takes full screen height */
-    overflow-y: auto; /* Enables scroll */
 }
 
 #cartItems {
     margin-bottom: 20px;
-    max-height: calc(100vh - 120px); /* Ensure cart items container doesn't take up entire space */
-    overflow-y: auto; /* Allows scrolling within the cart items container */
 }
 
 #totalCost {
     margin-top: 10px;
     font-weight: bold;
+    color: #4A6572;  /* Muted teal for total cost */
 }
-
 
 button {
     padding: 10px 20px;
-    background-color: #6B8E23; /* Muted green for regular buttons */
+    background-color: #4A6572;  /* Muted teal button */
     color: white;
     border: none;
     border-radius: 5px;
@@ -237,116 +227,71 @@ button {
 }
 
 button:hover {
-    background-color: #556B2F; /* Darker green for hover effect */
+    background-color: #3C5C61;  /* Slightly darker teal on hover */
 }
 
 footer {
-    background-color: #6B8E23; /* Muted green footer */
+    background-color: #4A6572;  /* Muted teal footer */
     color: white;
     padding: 15px 0;
     text-align: center;
 }
 
-/* Media Queries for responsiveness */
-@media (max-width: 1024px) {
+#cartLoadingGif {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#cartLoadingGif img {
+    width: 60px;
+    height: 60px;
+    animation: rotateGif 1.5s linear infinite;
+}
+
+@keyframes rotateGif {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 600px) {
     header .container {
         flex-direction: column;
         align-items: flex-start;
     }
-    
+
     header nav ul {
         flex-direction: column;
         margin-top: 10px;
     }
-    
-    .grid-container {
-        grid-template-columns: repeat(3, 1fr);
-    }
 
-    .hero h2 {
-        font-size: 2rem;
-    }
-    
-    .card {
-        width: 180px;
-        height: 250px;
-    }
-}
-
-@media (max-width: 768px) {
-    header nav ul {
-        text-align: center;
-        margin-top: 10px;
+    header nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
     }
 
     .grid-container {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .hero h2 {
-        font-size: 1.8rem;
-    }
-
-    .card {
-        width: 180px;
-        height: 250px;
-        padding: 10px;
-    }
-
-    .cart-button button {
-        padding: 12px;
-        font-size: 1.2rem;
-    }
-
-    .cart-section {
-        width: 250px;
-    }
-
-    button {
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 480px) {
-    header {
-        padding: 10px;
-    }
-
-    header .logo {
-        font-size: 1.6rem;
-    }
-
-    header nav ul {
-        flex-direction: column;
-        align-items: center;
-        margin-top: 10px;
-    }
-
-    .grid-container {
-        grid-template-columns: 1fr;
-    }
-
     .card {
         width: 100%;
-        height: 250px;
-        padding: 12px;
-    }
-
-    .cart-button button {
-        padding: 10px;
-        font-size: 1rem;
-    }
-
-    .cart-section {
-        width: 100%;
-    }
-
-    button {
-        padding: 8px 16px;
-        font-size: 0.8rem;
-    }
-
-    footer {
-        padding: 10px 0;
+        height: auto;
     }
 }

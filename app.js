@@ -3,24 +3,22 @@ let cart = [];
 function addToCart(itemName, itemPrice) {
     const item = { name: itemName, price: itemPrice };
     cart.push(item);
-    updateCart();  
-
+    updateCart();
+    
     var card = event.target.closest('.card');
     
     if (!card.classList.contains('added')) {
         card.classList.add('added');
     }
-
-    showCartLoadingGif(true); // Show loading GIF while updating the cart
+    
     updateCartDisplay();
-    showCartLoadingGif(false); // Hide loading GIF after updating the cart
 }
 
 function updateCart() {
     const cartItemsContainer = document.getElementById('cartItems');
     const totalCostElement = document.getElementById('totalCost');
     
-    cartItemsContainer.innerHTML = '';  
+    cartItemsContainer.innerHTML = '';
     
     let totalCost = 0;
     cart.forEach((item, index) => {
@@ -36,8 +34,8 @@ function updateCart() {
 
 function removeItem(index) {
     cart.splice(index, 1);
-    updateCart();  
-    updateCartDisplay();  
+    updateCart();
+    updateCartDisplay();
 }
 
 function toggleCart() {
@@ -45,20 +43,17 @@ function toggleCart() {
     cartSection.classList.toggle('visible');
 }
 
-function checkout(event) {
-    if (event) {
-        event.preventDefault();
-    }
-
-    const customerName = prompt("Please enter your name to proceed with the checkout:");
-
-    if (customerName && customerName.trim() !== "") {
-        alert(`Thank you, ${customerName}! Your order has been successfully placed.`);
-        cart = [];
+function checkout() {
+    const customerName = prompt("Please enter your name for the bill:");
+    
+    if (customerName) {
+        alert(`Proceeding to checkout, Thank you ${customerName}!`);
+        cart = [];  
         updateCart();  
         toggleCart();  
+        window.location.reload();
     } else {
-        alert("Name is required to proceed with checkout.");
+        alert("Name is required for checkout.");
     }
 }
 
@@ -89,11 +84,10 @@ function filterItems() {
     });
 }
 
-function showCartLoadingGif(show) {
-    const gifContainer = document.getElementById('cartLoadingGif');
-    if (show) {
-        gifContainer.style.display = 'block';
-    } else {
-        gifContainer.style.display = 'none';
+document.addEventListener('click', function (event) {
+    const cartSection = document.getElementById('cartSection');
+    
+    if (cartSection.classList.contains('visible') && !cartSection.contains(event.target) && !event.target.closest('.cart-button')) {
+        cartSection.classList.remove('visible');
     }
-}
+});
