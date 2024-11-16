@@ -33,9 +33,9 @@ function updateCart() {
 }
 
 function removeItem(index) {
-    cart.splice(index, 1); // Remove the item at the given index
-    updateCart();  // Update the cart display
-    updateCartDisplay();  // Update the cart count and total price
+    cart.splice(index, 1);
+    updateCart();  
+    updateCartDisplay();  
 }
 
 function toggleCart() {
@@ -43,11 +43,21 @@ function toggleCart() {
     cartSection.classList.toggle('visible');
 }
 
-function checkout() {
-    alert('Proceeding to checkout...');
-    cart = [];  
-    updateCart();  
-    toggleCart();  
+function checkout(event) {
+    if (event) {
+        event.preventDefault();
+    }
+
+    const customerName = prompt("Please enter your name to proceed with the checkout:");
+
+    if (customerName && customerName.trim() !== "") {
+        alert(`Thank you, ${customerName}! Your order has been successfully placed.`);
+        cart = [];
+        updateCart();  
+        toggleCart();  
+    } else {
+        alert("Name is required to proceed with checkout.");
+    }
 }
 
 function updateCartDisplay() {

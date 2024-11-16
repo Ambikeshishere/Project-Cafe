@@ -170,6 +170,7 @@ h2 {
     cursor: pointer;
 }
 
+/* Ensure the cart section becomes scrollable when full */
 .cart-section {
     position: fixed;
     top: 0;
@@ -182,12 +183,15 @@ h2 {
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
     z-index: 1000;
+    height: 100vh; /* Full viewport height for the cart */
+    overflow-y: auto; /* Allow vertical scrolling */
 }
 
 .cart-item {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
+    padding: 5px;
 }
 
 .cart-item button {
@@ -203,20 +207,25 @@ h2 {
     background-color: #D32F2F;
 }
 
+/* When cart is open, show full height and allow scrolling */
 .cart-section.visible {
     display: block;
     opacity: 1;
+    height: 100vh; /* Ensures the cart takes full screen height */
+    overflow-y: auto; /* Enables scroll */
 }
 
 #cartItems {
     margin-bottom: 20px;
+    max-height: calc(100vh - 120px); /* Ensure cart items container doesn't take up entire space */
+    overflow-y: auto; /* Allows scrolling within the cart items container */
 }
 
 #totalCost {
     margin-top: 10px;
     font-weight: bold;
-    color: #3D3D3D;
 }
+
 
 button {
     padding: 10px 20px;
